@@ -1,0 +1,45 @@
+/**  
+ * Assignment 5           P5RegularHex.java           Due Feb. 23, 2013 
+ * login:  cs8bbf 
+ **/ 
+/**
+  * P5RegularHex()  -No argument constructor
+  * P5RegularHex(s) -Overloaded constructor, pass the side parameter to P5Polygon(s)
+  * toString()      -Implement toString, format dimensions of a hexagon
+  * perimeter()     -Override and implement super class perimeter     
+  * area()          -Implement super class area, calculate area of a hexagon
+  **/
+import static java.lang.Math.*;   // Mathematical symbols
+
+class P5RegularHex extends P5Polygon
+{  
+  protected double L = this.side;
+  protected double COEFFICIENT = ((3*(((int)sqrt(3))))/2);
+  protected double Area_of_regular_hexagon;
+  public P5RegularHex()          //No argument constructor
+  { 
+    side = (int) 1 ;
+  }
+  public P5RegularHex(double s)  //Overloaded constructor
+  {
+    super(s); 
+  }
+  public String toString() //Implement toString, format dimensions of a hexagon
+  {
+    return(this.getName() + side + "side"); 
+  }
+  public double perimeter() //Override and implment super class perimeter
+  {   
+    return(6*L); 
+  }
+  public double area()      //calculate area of a hexagon
+  {
+    Area_of_regular_hexagon = COEFFICIENT*((L*L);
+    return(Area_of_regular_hexagon);
+  }
+  public double volume()    //Return any value for the unused volume 
+  {
+    return 0;
+  }
+  public void setDim(double s, double h){}
+}

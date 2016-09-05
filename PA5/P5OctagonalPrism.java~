@@ -1,0 +1,48 @@
+/**  
+ * Assignment 5           P5OctagonalPrism.java           Due Feb. 23, 2013 
+ * login:  cs8bbf 
+ **/ 
+/**  
+  * P55OctagonalPrism()   - No argument constructor, initialize height to one
+  * P55OctagonalPrism(s,h)- Overloaded  constructor, initialize height to 
+  * parameter
+  * toString()     - Override, return a String with formatted dimensions of a 
+  * hexagonal prism 
+  * setDim(s,h)   - Override, assign dimensions of a hexagonal prism  
+  * area()     - Override super class area, calculate area of a hexagonal prism
+  * volume()    - Override - Calculate volume  of a hexagonal prism
+  **/
+
+public class P5OctagonalPrism extends P5RegularOctagon
+{
+  protected double height;
+  public P5OctagonalPrism()         // No argument constructor
+  {
+    height = (int) 1;
+  }
+  public P5OctagonalPrism(double s, double h) //Overloaded constructor
+  {
+    super(s);
+    height = h;
+  }
+  public String toString()          //Override, return a String
+  {
+    return(this.getName() + side + "x" + height);  
+  }
+  public void setDim(double s, double h) //Override, assign dimensions 
+  {
+    side = s;
+    height = h;
+  }
+  public double area()
+  {
+    double area = (2*super.area()) + height*super.perimeter();
+    return area;
+  }
+  
+  public double volume()                 //Override-Calculate volume
+  {
+    double volume = height*super.area();
+    return volume;
+  }
+}

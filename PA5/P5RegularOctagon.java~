@@ -1,0 +1,45 @@
+/**  
+ * Assignment 5            P5RegularOctagon.java            Due Feb. 23, 2013 
+ * login:  cs8bbf 
+ **/ 
+/**
+  * P5RegularOctagon()   - No argument constructor
+  * P5RegularOctagon(s)  - Overloaded constructor, pass the side parameter to 
+  * P5Polygon(s)
+  * toString()       - Implement toString, format dimensions of a hexagon
+  * perimeter()      - Override and implement super class perimeter     
+  * area()           - Implement super class area, calculate area of a hexagon
+  **/
+
+import static java.lang.Math.*;   // Mathematical symbols
+
+
+public class P5RegularOctagon extends P5Polygon
+{
+  protected double side;
+  public P5RegularOctagon(){}       //No argument constructor
+  public P5RegularOctagon(double s) //Overloaded constructor
+  {
+    super(s); 
+  }
+  public String toString()          //Override, return a String
+  {
+    return(this.getName() + side + "side");
+  }
+  public double perimeter()         
+  {
+    double perimeter = this.side*8;
+    return perimeter;
+  }
+  public double area()              //Override super class area
+  {
+    double L = side;
+    double area = 2*(1+(int)(sqrt(2)))*(L*L);
+    return(area);
+  }
+  public double volume()            //Return any values for the unused volume
+  {
+    return 0;
+  }
+  public void setDim(double s, double h){}
+}

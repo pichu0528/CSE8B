@@ -1,0 +1,52 @@
+/**  
+ * Assignment 5           P5Polygon.java           Due Feb. 23, 2013 
+ * login:  cs8bbf 
+ **/ 
+/**
+ * P5Polygon()       - No argument constructor, initialize side to one
+ * P5Polygon(double) - Overloaded constructor,  initialize side to parameter
+ * toString()        - Format and return class name 
+ * getName()    - Generates name of this class object and return as a String 
+ * setDim(double)          - Assign 1 dimension  of a 2-D polygon  (side)
+ * setDim(double,double)   - Assign 2 dimensions of a 3-D polygion(side, height)
+ * perimeter()             - Calculate perimeter of a polygon
+ * area()                  - Calculate area      of a polygion
+ * volume()                - Calculate volume    of a polygion
+ **/
+
+//The abstract parent class(superclass), which its subclasses will inherit from 
+public abstract class P5Polygon
+{
+  double side, height;
+  public P5Polygon()                         //No argument constructor
+  {
+    side = (int) 1;
+  }
+  public P5Polygon(double parameter)         //No argument constructor
+  {
+    side = parameter;
+  }
+  public String toString()                   //Format and return class name
+  { 
+    return this.getName(); 
+  }
+  public String getName()                    //Generates name of this class obj
+  {
+    return(this.getClass().getName() + ":  ");
+  }
+  
+  public void setDim(double s)          //Assign 1 dimension of a 2-D polygon
+  {
+    side = s;
+  }
+  
+  //////////Abstract Methods/////////////
+  //Assign 2 dimensions of a 3-D polygon
+  public abstract void setDim(double s,double h); 
+  //Calculate perimeter of a polygon
+  abstract double perimeter();      
+  //Calculate area of a polygon
+  abstract double area();              
+  //Calculate volume of a polygon
+  abstract double volume();             
+}
